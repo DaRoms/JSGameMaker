@@ -1,0 +1,303 @@
+@font-face {
+    font-family: OpenSansRegular;
+    src: url("fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: TitleFont;
+    src: url("fonts/Title2.ttf");
+}
+
+* {
+    color: rgb(35, 35, 35);
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+#editor_container {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    overflow: none;
+}
+
+body{
+    overflow: none;
+    font-family: OpenSansRegular;
+}
+#leftcontainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: calc(100% - 31px);
+    width: 200px;
+    background-color: rgb(245, 245, 245);
+    border-right: 1px solid rgb(225,225,225);
+}
+
+#editingarea {
+    position: fixed;
+    left: 200px;
+    top: 0;
+    width: calc(100% - 200px);
+    height: 70%;
+    overflow: none;
+}
+
+#room_editor {
+    width: calc(100%);
+    height: calc(100% - 72px);
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+#room_editor_content {
+    width: 2000px;
+    height: 1500px;
+    top: 0px;
+    left: 0px;
+    background-image: url("images/grid.png");
+    background-color: lightgray;
+}
+
+#game_view {
+    width: 100%;
+    height: 100%;
+}
+
+#console {
+    position: fixed;
+    left: 200px;
+    top: 70%;
+    height: calc(30% - 30px);
+    width: calc(100% - 200px);
+    border-top: 1px solid rgb(225, 225, 225);
+    background-color: rgb(235, 235, 235);
+    overflow-y: scroll;
+}
+.console_message {
+    float: left;
+    width: 100%;
+    height: auto;
+    color: rgb(35, 35, 35);
+    font-family: OpenSansRegular;
+    background-color: rgb(230,230,230);
+    margin: 0 !important;
+    padding: 5px;
+    border-bottom: 1px solid rgb(220,220,220);
+}
+
+#title {
+    font-size: 45px;
+    font-family: TitleFont;
+    text-align: center;
+    width: 100%;
+}
+
+#gameobjectlist {
+    margin-top: 15px;
+    overflow-y: auto;
+    height: calc(100% - 120px);
+}
+
+.listitem {
+    transition-duration: 0.2s;
+    font-size: 15px;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;
+}
+
+.listitem:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.listitem:active {
+    background-color: rgb(225, 225, 225);
+}
+
+.listitemtext {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+#tabarea {
+    width: 100%;
+    height: auto;
+    background-color: rgb(245, 245, 245);
+    float: left;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.tabitem {
+    float: left;
+    width: 200px;
+    background-color: rgb(245, 245, 245);
+    border-right: 1px solid rgb(225, 225, 225);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.tabitem:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.tabtext {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#commandarea {
+    float: left;
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+}
+
+.cmditem {
+    min-width: 100px;
+    width: auto;
+    float: left;
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    border: none;
+    border-color: rgb(225, 225, 225);
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;
+}
+
+.cmditem:hover {
+    /*border-left: 1px solid rgb(225, 225, 225);
+    border-right: 1px solid rgb(225, 225, 225);*/
+    background-color: rgb(225, 225, 225);
+}
+
+#run_button:hover {
+    background-color: lightgreen;
+}
+
+#run_button:active {
+    background-color: forestgreen;
+}
+
+#stop_button:hover {
+    background-color: lightcoral;
+}
+
+#stop_button:active {
+    background-color: rgb(221, 37, 37);
+}
+
+#btnNewObject {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-top: 1px solid rgb(225, 225, 225);
+    border-bottom: 1px solid rgb(225, 225, 225);
+    background-color: transparent;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;
+}
+
+#btnNewObject:hover {
+    background-color: rgb(235,235,235);
+}
+
+#btnNewObject:active {
+    background-color: rgb(225,225,225);
+}
+
+#statusbar {
+    position: fixed;
+    background-color: rgb(225, 225, 225);
+    top: calc(100% - 30px);
+    left: 200px;
+    height: 30px;
+    width: calc(100% - 200px);
+    border-top: 1px solid rgb(215, 215, 215);
+}
+
+#statusbar p {
+    font-size: 14px;
+    height: 100%;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+#game_view_canvas {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.selected {
+    background-color: #0099CC;
+}
+
+.selected:hover {
+    background-color: #007399;
+}
+
+.selected:active {
+    background-color: #004d66;
+}
+
+.code_tabs {
+    float: left;
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+#toggle_console {
+    position: absolute;
+    height: 30px;
+    width: 200px;
+    top: calc(100% - 30px);
+    border-right: 1px solid rgb(225, 225, 225);
+    border-top: 1px solid rgb(225, 225, 225);
+    background-color: rgb(245, 245, 245);
+    transition-duration: 0.2s;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#toggle_console:hover {
+    background-color: rgb(225, 225, 225);
+}
